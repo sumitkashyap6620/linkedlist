@@ -7,6 +7,17 @@ class creation{
       this.data = data ;
     }
    }
+   public static void displayreverse(node head){
+    if (head == null)return;
+    displayreverse(head.next);
+    System.out.print(head.data+" -> ");
+   }
+   public static void displayr(node head){
+    if (head == null)return;
+    System.out.print(head.data+" -> ");
+    head = head.next ;
+    displayr(head);
+   }
     public static void main(String[] args) {
         // 4 -> 3 -> 15 -> 45 -> 1
 
@@ -25,10 +36,13 @@ class creation{
         n4.next = n5 ;
         //n5.data = 1 ;
         node temp = n1 ;
-        while(temp.next != null){
+        while(temp != null){
             System.out.print(temp.data+" -> ");
             temp = temp.next ;
         }
-        System.out.print(temp.data);
+        System.out.println();
+        displayr(n1);
+         System.out.println();
+        displayreverse(n1);
     }
 }
