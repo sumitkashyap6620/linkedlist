@@ -36,13 +36,16 @@ class creation{
         n4.next = n5 ;
         //n5.data = 1 ;
         node temp = n1 ;
+        int length = 0 ;
         while(temp != null){
             System.out.print(temp.data+" -> ");
             temp = temp.next ;
+            length++ ;
         }
         System.out.println();
         displayr(n1);
          System.out.println();
         displayreverse(n1);
+         System.out.println("\n Length = " + length);
     }
 }
