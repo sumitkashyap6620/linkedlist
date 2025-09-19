@@ -83,8 +83,29 @@ public class implementation{
             temp = temp.next ;
         }
         return count ;
-       }
+       } 
+
+      // get any node in linkedlist 
       
+      int getAt(int idx){
+        node temp = head ;
+       for (int i = 0 ; i < idx ; i++)
+        temp = temp.next ;
+         return temp.data;  
+      }
+      
+       //  delete any node of linkedlist 
+
+       void deleteAt(int idx ){
+         if(idx == 0 ) head = head.next ; 
+         else{
+            node temp = head ;
+            for (int i = 0 ; i < idx-1 ; i++){
+                temp = temp.next ;
+            }
+               temp.next = temp.next.next ;
+         }
+       }
        // display linkedlist
 
        void display(){
@@ -105,7 +126,10 @@ public class implementation{
         ll.insertAtBegning(121);
         ll.insertAtBegning(11);
         System.out.println("length :- "+ll.length());
-        ll.insertAt(-8,1242);
+        ll.insertAt(7,1242);
+        ll.display();
+        System.out.println("\n getting value :- "+ll.getAt(3));
+         ll.deleteAt(7);
         ll.display();
     }
 }
