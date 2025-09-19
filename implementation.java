@@ -47,6 +47,32 @@ public class implementation{
        }
        }
 
+       // insert at any position in linked list 
+
+       void insertAt(int idx ,int val){
+        if (idx < 0 || idx > length()){
+            System.out.println("Wrong index !");
+            return ;
+        }
+        else if(idx == 0 ){
+            insertAtBegning(val);
+            return ;
+        }
+        else if(idx == length()){
+            insertAtEnd(val);
+            return ;
+        }
+         else{
+            node temp = new node (val);
+            node t = head ;
+            for (int i = 0 ; i < idx-1 ; i++){
+                t = t.next ;
+            }
+            temp.next = t.next ;
+            t.next = temp  ;
+          }
+       }
+
         // length of linkedlist 
         
        int length(){
@@ -79,7 +105,7 @@ public class implementation{
         ll.insertAtBegning(121);
         ll.insertAtBegning(11);
         System.out.println("length :- "+ll.length());
-        ll.insertAt(3,1242);
+        ll.insertAt(-8,1242);
         ll.display();
     }
 }
