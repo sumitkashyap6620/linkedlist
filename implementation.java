@@ -79,7 +79,7 @@ public class implementation{
         ll.insertAtBegning(121);
         ll.insertAtBegning(11);
         System.out.println("length :- "+ll.length());
-        //ll.insertAt(3,1242);
+        ll.insertAt(3,1242);
         ll.display();
     }
 }
